@@ -39,10 +39,10 @@
 
           <ul class='nav navbar-nav ml-auto'>
             <li class='nav-item'>
-              <a class="nav-link active text-muted" href="index_new.html">Home</a>
+              <a class="nav-link active text-muted" href="/index.html">Home</a>
             </li>
             <li class='nav-item'>
-              <a class="nav-link active text-muted" href="checkup.html"><b>Diagnostic Centre</b> <i class="fas fa-laptop-medical"></i></a>
+              <a class="nav-link active text-muted" href="/checkup.html"><b>Diagnostic Centre</b> <i class="fas fa-laptop-medical"></i></a>
             </li>
             {% if current_user.is_authenticated %}
             <li class="nav-link"><a href="{{url_for('logout')}}">Logout</a></li>
