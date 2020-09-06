@@ -1,0 +1,230 @@
+.gif{
+  height: 300px;
+  width: 300px;
+  border-color: white;
+  border: 4;
+ }
+ body{
+
+  background-color: #F0FFFF;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  margin-top: 15px;
+ }
+
+ .labelFile {
+   overflow: auto;
+ }
+
+.report {
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+ h1,h2,h3{
+
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  color:  #00334d;
+ }
+ p{
+  color: white;
+ }
+
+
+
+.mystyle {
+  width: 100%;
+  padding: 25px;
+  background-color: coral;
+  color: white;
+  font-size: 25px;
+  /* box-sizing: border-box; */
+  display: inline-block;
+}
+img{
+  max-width:500px;
+}
+
+
+input[type=file]{
+padding:10px;
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+background:transparent;}
+.button {
+  background-color: rgba(0.55,0,0,0.5);
+  border: 1;
+  border-color: #1a53ff;
+  color:   #00334d;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-decoration-color: black;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  position: center;
+}
+.button:hover span {
+  padding-right: 25px;
+  background-image:none !important;
+  background-color: white;
+
+}
+
+.button:hover span:after {
+  opacity: 7;
+  right: 0;
+  background-image:none !important;
+  background-color: white;
+}
+h1{
+  text-align: center;
+  font-style: all;
+  color: white;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+.button1 {
+  border-radius: 12px;
+  margin-bottom: 150px;
+}
+.demo{
+  height: 300px;
+  width: 300px;
+  border-color: white;
+  border: 4;
+  align-content: left;
+}
+* {
+  box-sizing: border-box;
+}
+.under{
+  text-decoration: underline;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 44.44%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.status{
+  text-align: left;
+}
+.height{
+  line-height: normal;
+}
+
+
+@media print {
+  #demo {
+    width: auto;
+  }
+}
+
+.footer
+{
+  background-color: #5F9EA0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/*
+.row .ico
+{
+  padding-left: 10px;
+}*/
+
+#footer-p
+{
+  font-size: 0.7rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+#footer-row
+{
+  vertical-align: center;
+  text-align: center;
+  margin: auto;
+  width: 50%;
+}
+
+
+#rcorners {
+    border-radius: 6px;
+    border: 1px solid #000000;
+    padding: 15px;
+    width: 200px;
+    height: 0px;
+}
+
+#labell{
+  padding: 5px;
+  font-size: 20px;
+}
+
+.navbar-light .navbar-brand
+{
+	color: #325C74;
+}
+
+.navbar-brand
+{
+	font-size: 2rem;
+	font-weight: bold;
+	padding-bottom: 1.5rem;
+}
+
+.nav-item
+{
+	padding: 0 16px;
+}
+
+
+.nav-link
+{
+	font-size: 1.1rem;
+}
+
+@media print {
+  #printButton, #id_one, #file_, #button1,#labelFile, .saveButton, .uploadButton, .upReport{
+    display: none;
+    margin: 0 !important;
+  }
+
+  .button{
+    display: none;
+  }
+
+  #rcorners {
+    border-radius: 6px;
+    border: 0 solid #000000;
+    padding: 15px;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+  body{
+    background-color: #F0FFFF;
+  }
+}
+
+.topic {
+  padding-bottom: 20px;
+}

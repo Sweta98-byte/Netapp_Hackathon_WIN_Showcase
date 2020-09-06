@@ -1,0 +1,178 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#check
+{
+	margin-left: 10px;
+	box-shadow: 10px 10px 15px grey;
+}
+
+h2{
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2,h5,h6
+{
+	text-align: center;
+}
+
+#demo
+{
+	background-color: #F0FFFF;
+	padding: 5rem 10rem;
+}
+
+#demo h2
+{
+	padding-bottom: 3rem;
+}
+
+.footer
+{
+	background-color: #5F9EA0;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.footer .row
+{
+	vertical-align: center;
+	text-align: center;
+}
+
+.try{
+  padding-top: 10px;
+}
+
+/*
+.row .ico
+{
+	padding-left: 10px;
+}*/
+
+.footer p
+{
+	font-size: 0.7rem;
+	text-align: center;
+	font-weight: bold;
+}
+
+.main-p
+{
+	font-size: 1rem;
+	padding: 20px;
+}
+
+
+.top
+{
+
+	background-color: #F0FFFF	;
+	line-height: 2;
+	padding-bottom: 9rem;
+}
+
+.navbar-light .navbar-brand
+{
+	color: #325C74;
+}
+
+.navbar-brand
+{
+	font-size: 2rem;
+	font-weight: bold;
+	padding-bottom: 1.5rem;
+}
+
+.nav-item
+{
+	padding: 0 16px;
+}
+
+
+.nav-link
+{
+	font-size: 1.1rem;
+}
+
+.icoo
+{
+	color: #67E6EC;
+	padding-bottom: 7%;
+}
+
+.icoo:hover {
+	color: #C1F0F6;
+}
+
+.about-title
+{
+	padding-bottom: 4%;
+}
+/*
+.footer
+{
+	background-color: white;
+}
+*/
+.footer .row
+{
+	margin: auto;
+	width: 50%;
+}
+
+.top .container
+{
+	padding-bottom: 5%
+}
+
+#disease .row
+{
+	text-align: center;
+	padding: 0% 25% 0% 25%;
+	background-color: #F0FFFF;
+}
+
+#demoo
+{
+	padding-left: 5rem;
+	padding-right: 5rem;
+	line-height: 2;
+}
+/*
+.ico
+{
+	padding: 7% 1%;
+}*/
+
+
+#icons
+{
+	background-color: #fff;
+	/*box-shadow: 10px 10px 15px grey;*/
+	padding: 10% 20%;
+	line-height: 1.5;
+	text-align: center;
+}
+
+#main
+{
+	font-family: 'Montserrat', sans-serif;
+	padding: 20px;
+}
+
+#aboutt
+{
+	margin: 7%;
+	line-height: 1.7;
+    background-color: #fff;
+}
+
+#about-img
+{
+    height: 95%;
+    width: 86%;
+    margin-left: 5%;
+}

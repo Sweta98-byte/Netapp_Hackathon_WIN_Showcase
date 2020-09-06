@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Diagnostic Centre</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!--Bootstrap JS scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+  <!-- Custom stylesheet -->
+  <link rel="stylesheet" type="text/css" href="/static/css/styles5.css">
+</head>
+
+<!-- Font awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+
+
+<body>
+
+  <div class=top>
+
+    <div class='container'>
+
+      <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href="index_new.html">healthcareAI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class='collapse navbar-collapse' id="navbarSupportedContent">
+
+          <ul class='nav navbar-nav ml-auto'>
+            <li class='nav-item'>
+              <a class="nav-link active text-muted" href="index_new.html">Home</a>
+            </li>
+            <li class='nav-item'>
+              <a class="nav-link active text-muted" href="checkup.html"><b>Diagnostic Centre</b> <i class="fas fa-laptop-medical"></i></a>
+            </li>
+            {% if current_user.is_authenticated %}
+            <li class="nav-link"><a href="{{url_for('logout')}}">Logout</a></li>
+            {% endif %}
+          </ul>
+
+        </div>
+      </nav>
+
+
+      <section id="main-disease">
+        <div class='row'>
+          <div class='col-lg-12'>
+            <h1 class='text-muted '>Welcome to our HealthCentre.</h1>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <section id='disease'>
+      <div class='row'>
+        <div class="col-lg-6" id='dis-size1'>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/static/images/eye.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Diabetic Retinopathy</h5>
+              <p class="card-text">Upload your retinal fundus images to see if you are suffering from diabetic retinopathy.</p>
+              <a href="retino.html" class="btn btn-primary">Get a checkup</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6" id='dis-size2'>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/static/images/heart.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Cardiac Imaging</h5>
+              <p class="card-text">Just upload your cardiac MRI images and see if your heart is healthy.</p>
+              <a href="/oct.html" class="btn btn-primary">Get a checkup</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </section>
+
+  </div>
+
+  <section class="footer">
+    <div class='row'>
+      <div class="col-lg-12">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <p>
+          <br>© Credits : Deep Learning & Deployment<br>Sweta Rani Sahu <br>Swati Priya <br>Smita Prakash
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+
+</html>

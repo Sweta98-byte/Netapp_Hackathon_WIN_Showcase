@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cardiac Disease</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!--Bootstrap JS scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+
+  <!-- Font awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+
+  <script src="../static/js/oct.js"></script>
+  <link rel="stylesheet" href="../static/css/style1.css">
+</head>
+
+<body>
+
+  <div class='container'>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" href="/">healthcareAI</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class='collapse navbar-collapse' id="navbarSupportedContent">
+
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item"><a class='nav-link text-muted' href="{{url_for('home')}}">Home</a></li>
+          <li class="nav-item"><a class='nav-link text-muted' href="/Instructions.pdf">Instructions</a></li>
+          <li class="nav-item"><a class='nav-link text-muted' href="{{url_for('logout')}}">Logout</a></li>
+          <li class='nav-item'><a class='nav-link text-muted' href="{{url_for('register')}}">Register</a></li>
+        </ul>
+    </nav>
+  </div>
+  </div>
+
+  <br><br>
+  <h1 class="text-muted topic">Cardiac Report</h1>
+  <center>
+    <label for="patientName" id="labell">Patient Name:</label>
+    <input type="text" id="rcorners" name="patientName"></input>
+    <br><br>
+    <div class="row">
+      <div class="col-lg-3">
+      </div>
+      <div class="col-lg-3">
+        <select class="form-control" id="id_one" onchange="show_hide_cancer()">
+          <option value="oct">Upload Cardiac Images</option>
+        </select>
+      </div>
+      <div class="col-lg-4">
+        <div class="input-group">
+          <div class="custom-file">
+            <input id="file_" type="file" name="pic" accept="image/*" capture="camera" onchange="readURL(this);" class="custom-file-input">
+            <label class="custom-file-label" for="file_" id="labelFile">Choose file</label>
+          </div>
+          <div class="input-group-append">
+            <button onclick="submit();changeText('button1', 'Analysing....', 'Analyse Image');" id="button1" class="btn btn-outline-secondary" type="button">Analyze Image</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br>
+  </center>
+  <br>
+  <center>
+    <h2 id="given"></h2>
+    <div class="gif">
+      <img src="../static/images/loading2.gif" id="blah" class="demo">
+    </div>
+    <br><br>
+    <!-- <h5 id="Analysing"></h5> -->
+    <h2 id="demo" class="under"></h2>
+    <table align="center" style="background-color: white; border:1px solid; padding: 1rem;">
+      <td height="50%" width="100%">
+        <ul>
+          <li>
+            <h3 id="status" class="status height report"></h3>
+          </li>
+          <li>
+            <h3 id="status1" class="status height report"></h3>
+          </li>
+          <li>
+            <h3 id="status2" class="status height report"></h3>
+          </li>
+          <li>
+            <h3 id="status3" class="status height report"></h3>
+          </li>
+        </ul>
+
+        <h3>
+          <font color="black">
+            <div id="result" class="report">Find your report here after analysis!! </div>
+          </font>
+        </h3>
+      </td>
+    </table>
+    <br>
+    <button class="btn btn-outline-primary btn-lg saveButton" onclick="window.print()">Save</button>
+    <br>
+    </br>
+    <h3 class="upReport">Please click on button below to upload the report</h3>
+    <a href="/upload"><button class="btn btn-outline-primary btn-lg button1 uploadButton" type='submit'>Upload Report</button></a>
+  </center>
+
+
+  <section class="footer">
+    <div class='row' id=footer-row>
+      <div class="col-lg-12">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <p id='footer-p'>
+          <br>© Credits : Deep Learning & Deployment<br>Sweta Rani Sahu <br>Swati Priya <br>Smita Prakash
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+<script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        $('#blah')
+          .attr('src', e.target.result);
+        document.getElementById('labelFile').innerHTML = $('#file_')[0].files[0].name;
+
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Healthcare AI</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!--Bootstrap JS scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+  <!-- Custom stylesheet -->
+  <link rel="stylesheet" type="text/css" href="/static/css/styles5.css">
+</head>
+
+<!-- Font awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+
+
+<body>
+
+  <div class=top>
+
+    <div class='container'>
+
+      <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href="/">healthcareAI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class='collapse navbar-collapse' id="navbarSupportedContent">
+
+          <ul class='nav navbar-nav ml-auto'>
+            <li class='nav-item'>
+              <a class="nav-link active text-muted" href="index.html"><b>Home</b></a>
+            </li>
+            <li class='nav-item'>
+              <a class='nav-link text-muted ' href="#aboutt">About</a>
+            </li>
+            <li class='nav-item'>
+              <a class='nav-link text-muted ' href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__dN_lY5UMkhNNlBNSVJFQlNaVTZUSVI2TVhDV0FIWi4u">Feedback</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link text-muted ' href="#demo">Demo</a>
+            </li>
+            {% if current_user.is_authenticated %}
+            <li class="nav-item"><a class='nav-link text-info' href="{{url_for('logout')}}">Logout</a></li>
+            {% else %}
+            <li class='nav-item'><a class='nav-link text-info' href="{{url_for('register')}}">Register</a></li>
+            <li class='nav-item'><a class='nav-link text-info' href="{{url_for('login')}}">Log In</a></li>
+            {% endif %}
+          </ul>
+
+        </div>
+      </nav>
+
+
+      <section id="main">
+        <div class='row'>
+          <div class='col-lg-6'>
+            <p>
+              {% with messages = get_flashed_messages() %}
+              {% if messages %}
+              {% for message in messages %}
+            <div class="alert alert-primary">
+              <strong>{{ message }}</strong>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            </p>
+            {% if current_user.is_authenticated %}
+            <h1 class='text-success'>Welcome {{ current_user.username }}!👋</h1>
+            {% else %}
+            <h3 class='text-danger col-lg-6'>Please login or register!</h3>
+            {% endif %}
+            <h1 class='try text-muted col-lg-6'>Try out our Medical Imaging application.</h1>
+            <p class="main-p text-muted">We care for you. So, go ahead and explore our diagnostic centre.</p>
+            {% if current_user.is_authenticated %}
+            <a href="checkup.html"><button type="button" class="btn btn-secondary btn-lg" id='check'><b><i class="fas fa-stethoscope"></i> Diagnostic Centre</b></button></a>
+            <br>
+            </br>
+            <a href="{{url_for('result')}}"><button type="button" class="btn btn-secondary btn-lg" id='check'><b><i class="fas fa-book-medical"></i> Generated Reports</b></button></a>
+            {% endif %}
+          </div>
+          <div class='col-lg-6'>
+            <img class='main-pic' src='/static/images/beat.gif'></img>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
+  <section id="aboutt">
+    <div class='row'>
+      <div class='col-lg-6'>
+        <h2 class="about-title">About</h2>
+        <p>
+          Medical imaging consists of set of processes or techniques to create visual representations of the interior parts of the body such as organs or tissues for clinical purposes to monitor health, diagnose and treat diseases and injuries.
+          Moreover, it also helps in creating database of anatomy and physiology.Deep learning uses efficient methods to do the diagnosis in state of the art manner. Applications of deep learning in healthcare industry provide solutions to variety of
+          problems ranging from disease diagnostics to suggestions for personalised treatment.
+        </p>
+        <h6>
+          Data Source: Kaggle
+        </h6>
+
+      </div>
+      <div class='col-lg-6'>
+        <img id='about-img' src="https://www.pngitem.com/pimgs/m/144-1447818_medical-imaging-hd-png-download.png"></img>
+      </div>
+    </div>
+  </section>
+
+
+  <section id='demo'>
+    <h2>Demo</h2>
+    <div class='row'>
+      <div class="col-lg-6 embed-responsive embed-responsive-4by3" id='demoo'>
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/IQu8iExu4Qg" allowfullscreen></iframe>
+      </div>
+      <div class="col-lg-6" id='demoo'>
+        <p>This video contains the complete functionalities of our website. Check out this video to learn more.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section id='icons'>
+    <div class='row'>
+      <div class='col-lg-4'>
+        <div class='icons-item'>
+          <i class="fas fa-check-circle fa-3x icoo"></i>
+          <h3 class='para'>Easy-to-use</h3>
+          <p>Super user-friendly.Simple instructions.</p>
+        </div>
+      </div>
+      <div class='col-lg-4'>
+        <div class='icons-item'>
+          <i class="fas fa-robot fa-3x icoo"></i>
+          <h3 class='para'>AI-powered</h3>
+          <p>A very intelligent AI-powered application.</p>
+        </div>
+      </div>
+      <div class='col-lg-4'>
+        <div class='icons-item'>
+          <i class="fas fa-shield-alt fa-3x icoo"></i>
+          <h3 class='para'>Secure</h3>
+          <p>We do not share your information.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer">
+    <div class='row'>
+      <div class="col-lg-12">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <p>
+          <br>© Credits : Deep Learning & Deployment<br>Sweta Rani Sahu <br>Swati Priya <br>Smita Prakash
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+
+</html>
