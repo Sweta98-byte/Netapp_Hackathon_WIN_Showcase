@@ -18,6 +18,9 @@
     
 Open the link, http://127.0.0.1:5000/ on your browser to view the results.
 ## Screenshots of Web Application
+   ### Welcome Page
+
+![Welcome](https://user-images.githubusercontent.com/51088933/92331895-6eed6100-f097-11ea-8e4e-9e84e797dd27.jpeg)
 
 
        
