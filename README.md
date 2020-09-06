@@ -17,8 +17,10 @@
     Download the repository and launch the terminal. Then browse to the directory in which the repository is downloaded, using cd commands (via terminal) and follow the steps 3 and 4 above to launch the application.     
     
 Open the link, http://127.0.0.1:5000/ on your browser to view the results.
+## Screenshots of Web Application
+
+
        
 
 ## <a href="https://github.com/smitap-31/Netapp_Hackathon_WIN_Showcase/graphs/contributors"><img src="https://img.shields.io/github/contributors/smitap-31/Netapp_Hackathon_WIN_Showcase"></a>   
 
-##Screenshots of Web Application
